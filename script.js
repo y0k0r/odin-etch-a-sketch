@@ -2,6 +2,8 @@
 function createGrid(size) {
   const container = document.querySelector(".container");
   
+  container.innerHTML = "";
+
   let rows = size;
   let columns = size;
 
@@ -23,3 +25,8 @@ function createGrid(size) {
 
 createGrid(16);
 
+const btn = document.querySelector("button");
+btn.addEventListener("click", () => {
+  let newSize = prompt("Enter grid size");
+  createGrid(newSize);
+})
