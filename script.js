@@ -9,9 +9,12 @@ function createGrid(size) {
     const row = document.createElement("div");
     row.classList.add("row");
     for (let j = 0; j < columns; j++ ) {
-      const boxes = document.createElement("div")
-      boxes.classList.add("boxes")
-      row.appendChild(boxes);
+      const box = document.createElement("div")
+      box.classList.add("box")
+      row.appendChild(box);
+      box.addEventListener("mouseenter", () => {
+        box.classList.add("active")
+      });
     }
     container.appendChild(row);
   }
@@ -19,3 +22,4 @@ function createGrid(size) {
 
 
 createGrid(16);
+
